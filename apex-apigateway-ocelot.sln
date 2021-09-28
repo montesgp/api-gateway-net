@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apex-apigateway-ocelot", "apex-apigateway-ocelot\apex-apigateway-ocelot.csproj", "{0693AC06-7F4D-4980-BD69-EE2790C8BAAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0693AC06-7F4D-4980-BD69-EE2790C8BAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0693AC06-7F4D-4980-BD69-EE2790C8BAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0693AC06-7F4D-4980-BD69-EE2790C8BAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0693AC06-7F4D-4980-BD69-EE2790C8BAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B86414CE-789B-43F1-8EE8-D95244A6B92F}
+	EndGlobalSection
+EndGlobal
