@@ -1,19 +1,43 @@
 {
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/api/usersAlbums",
+      "RouteKeys": [ "users", "albums" ],
+      "Aggregator": "UsersAlbumsAggregator"
+    }
+  ],
+
   "Routes": [
     {
       "UpstreamPathTemplate": "/api/users",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
         {
           "Host": "jsonplaceholder.typicode.com",
           "Port": 443
         }
       ],
-      "DownstreamPathTemplate": "/users"
-
+      "DownstreamPathTemplate": "/users",
+      "Key": "users",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/albums",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/albums",
+      "Key": "albums"
     }
   ],
+
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44372" 
+    "BaseUrl": "https://localhost:44372"
   }
 }
