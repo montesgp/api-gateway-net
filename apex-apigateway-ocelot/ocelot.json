@@ -34,6 +34,32 @@
       ],
       "DownstreamPathTemplate": "/albums",
       "Key": "albums"
+    },
+    {
+      "UpstreamPathTemplate": "/api/authenticate",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4000
+        }
+      ],
+      "DownstreamPathTemplate": "/users/authenticate",
+      "Key": "authenticate"
+    },
+    {
+      "UpstreamPathTemplate": "/api/EmailNotification",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44337
+        }
+      ],
+      "DownstreamPathTemplate": "/api/EmailNotification",
+      "Key": "notifications"
     }
   ],
 
