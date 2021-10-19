@@ -46,11 +46,19 @@ namespace apex_apigateway_ocelot
             services.AddOcelot()
                 .AddDelegatingHandler<RemoveEncodingDelegatingHandler>(true)
                 .AddSingletonDefinedAggregator<UsersAlbumsAggregator>();
+            services.AddSwaggerForOcelot(Configuration);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UsePathBase("/gateway");
+            app.UseSwaggerForOcelotUI(Configuration, opt =>
+            {
+                opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
+                opt.PathToSwaggerGenerator = "/swagger/docs";
+            });
             app.UseAuthentication();
             app.UseOcelot().Wait();
         }

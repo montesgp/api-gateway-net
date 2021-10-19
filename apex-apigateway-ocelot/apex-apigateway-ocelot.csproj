@@ -6,6 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="MMLib.SwaggerForOcelot" Version="1.10.5" />
 		<PackageReference Include="Ocelot" Version="16.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.5" />
 	</ItemGroup>

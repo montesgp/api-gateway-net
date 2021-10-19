@@ -59,7 +59,20 @@
         }
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
-      "Key": "notifications"
+      "SwaggerKey": "ApiNotifications"
+    }
+  ],
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "ApiNotifications",
+      "Config": [
+        {
+          "Name": "API Notifications",
+          "Version": "v1",
+          "Url": "https://localhost:44337/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
 
