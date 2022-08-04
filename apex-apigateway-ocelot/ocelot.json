@@ -9,7 +9,7 @@
 
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/users",
+      "UpstreamPathTemplate": "/api/notification",
       "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
         {
@@ -51,15 +51,27 @@
     {
       "UpstreamPathTemplate": "/api/EmailNotification",
       "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44337
+          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com"
         }
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api/test",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-infra-it-lab.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/",
+      "SwaggerKey": "ApiTest"
     }
   ],
 
@@ -70,7 +82,7 @@
         {
           "Name": "API Notifications",
           "Version": "v1",
-          "Url": "https://localhost:44337/swagger/v1/swagger.json"
+          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
         }
       ]
     }
