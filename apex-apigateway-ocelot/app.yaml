@@ -1,3 +1,6 @@
 runtime: aspnetcore
 env: flex
 service: apex-apigateway-ocelot
+
+env_variables:
+  ASPNETCORE_ENVIRONMENT: "Development"

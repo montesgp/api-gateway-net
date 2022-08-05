@@ -1,0 +1,93 @@
+{
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/api/usersAlbums",
+      "RouteKeys": [ "users", "albums" ],
+      "Aggregator": "UsersAlbumsAggregator"
+    }
+  ],
+
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/notification",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/users",
+      "Key": "users",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/albums",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/albums",
+      "Key": "albums"
+    },
+    {
+      "UpstreamPathTemplate": "/api/authenticate",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4000
+        }
+      ],
+      "DownstreamPathTemplate": "/users/authenticate",
+      "Key": "authenticate"
+    },
+    {
+      "UpstreamPathTemplate": "/api/EmailNotification",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/EmailNotification",
+      "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api/test",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-infra-it-lab.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/",
+      "SwaggerKey": "ApiTest"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "ApiNotifications",
+      "Config": [
+        {
+          "Name": "API Notifications",
+          "Version": "v1",
+          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44372"
+  }
+}
