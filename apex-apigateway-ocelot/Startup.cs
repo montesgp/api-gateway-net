@@ -48,7 +48,7 @@ namespace apex_apigateway_ocelot
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UsePathBase("/gateway");
-            app.UseSwaggerForOcelotUI(Configuration, opt =>
+            app.UseSwaggerForOcelotUI( opt =>
             {
                 opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
                 opt.PathToSwaggerGenerator = "/swagger/docs";
