@@ -24,19 +24,6 @@
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
-    },
-    {
-      "UpstreamPathTemplate": "/api/test",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-infra-it-lab.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/",
-      "SwaggerKey": "ApiTest"
     }
   ],
   "SwaggerEndPoints": [

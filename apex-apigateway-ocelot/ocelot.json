@@ -1,52 +1,17 @@
 {
-  "Aggregates": [
-    {
-      "UpstreamPathTemplate": "/api/usersAlbums",
-      "RouteKeys": [ "users", "albums" ],
-      "Aggregator": "UsersAlbumsAggregator"
-    }
-  ],
-
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/notification",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
-        }
-      ],
-      "DownstreamPathTemplate": "/users",
-      "Key": "users",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
-    },
-    {
-      "UpstreamPathTemplate": "/api/albums",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
-        }
-      ],
-      "DownstreamPathTemplate": "/albums",
-      "Key": "albums"
-    },
-    {
-      "UpstreamPathTemplate": "/api/authenticate",
-      "DownstreamScheme": "http",
-      "UpstreamHttpMethod": [],
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 4000
+          "Port": "44337"
         }
       ],
-      "DownstreamPathTemplate": "/users/authenticate",
-      "Key": "authenticate"
+      "DownstreamPathTemplate": "/Authentication/Auth",
+      "SwaggerKey": "ApiAuthentication"
     },
     {
       "UpstreamPathTemplate": "/api/EmailNotification",
@@ -76,6 +41,16 @@
   ],
 
   "SwaggerEndPoints": [
+    {
+      "Key": "ApiAuthentication",
+      "Config": [
+        {
+          "Name": "API Authentication",
+          "Version": "v1",
+          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
     {
       "Key": "ApiNotifications",
       "Config": [
