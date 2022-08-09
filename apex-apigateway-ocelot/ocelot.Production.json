@@ -1,6 +1,19 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-api-auth-dot-igneous-ethos-358815.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "SwaggerKey": "ApiAuthentication"
+    },
+    {
       "UpstreamPathTemplate": "/api/EmailNotification",
       "DownstreamScheme": "https",
       "UpstreamHttpMethod": [ "Post" ],
@@ -11,9 +24,32 @@
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/{endpoint}",
+      "SwaggerKey": "ApiPeople"
     }
   ],
   "SwaggerEndPoints": [
+    {
+      "Key": "ApiAuthentication",
+      "Config": [
+        {
+          "Name": "API Authentication",
+          "Version": "v1",
+          "Url": "https://apex-api-auth-dot-igneous-ethos-358815.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
     {
       "Key": "ApiNotifications",
       "Config": [
@@ -23,10 +59,20 @@
           "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
         }
       ]
+    },
+    {
+      "Key": "ApiPeople",
+      "Config": [
+        {
+          "Name": "API People",
+          "Version": "v1",
+          "Url": "https://apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
 
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44372"
+    "BaseUrl": "https://apex-apigateway-ocelot-dot-alpine-practice-337919.uc.r.appspot.com"
   }
 }
