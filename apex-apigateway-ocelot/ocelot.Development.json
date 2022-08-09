@@ -6,11 +6,11 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "44337"
+          "Host": "apex-api-auth-dot-fluent-archway-358815.appspot.com",
+          "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {
@@ -24,6 +24,19 @@
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api¨/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-apexpeople-api-dot-light-sunup-356915.uc.r.appspot",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/{endpoint}",
+      "SwaggerKey": "ApiPeople"
     },
     {
       "UpstreamPathTemplate": "/api/test",
@@ -46,7 +59,7 @@
         {
           "Name": "API Authentication",
           "Version": "v1",
-          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+          "Url": "https://apex-api-auth-dot-fluent-archway-358815.appspot.com/swagger/v1/swagger.json"
         }
       ]
     },
@@ -59,9 +72,39 @@
           "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
         }
       ]
+    },
+    {
+      "Key": "ApiPeople",
+      "Config": [
+        {
+          "Name": "API People",
+          "Version": "v1",
+          "Url": "https://apex-apexpeople-api-dot-light-sunup-356915.uc.r.appspot/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiFileManager",
+      "Config": [
+        {
+          "Name": "API FileManager",
+          "Version": "v1",
+          "Url": "https://filemanagerapi-dot-thermal-beach-344303.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiLlamadas",
+      "Config": [
+        {
+          "Name": "API Llamadas",
+          "Version": "v1",
+          "Url": "https://api-llamadas-dot-careful-analyst-356715.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44372"
+    "BaseUrl": "https://apex-apigateway-ocelot-dot-alpine-practice-337919.uc.r.appspot.com"
   }
 }

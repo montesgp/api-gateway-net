@@ -1,4 +1,3 @@
-using apex_apigateway_ocelot.Aggregators;
 using apex_apigateway_ocelot.Handlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -38,8 +37,7 @@ namespace apex_apigateway_ocelot
                 });
 
             services.AddOcelot()
-                .AddDelegatingHandler<RemoveEncodingDelegatingHandler>(true)
-                .AddSingletonDefinedAggregator<UsersAlbumsAggregator>();
+                .AddDelegatingHandler<RemoveEncodingDelegatingHandler>(true);
             services.AddSwaggerForOcelot(Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
@@ -48,11 +46,11 @@ namespace apex_apigateway_ocelot
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UsePathBase("/gateway");
-            app.UseSwaggerForOcelotUI( opt =>
-            {
-                opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
-                opt.PathToSwaggerGenerator = "/swagger/docs";
-            });
+            app.UseSwaggerForOcelotUI(opt =>
+           {
+               opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
+               opt.PathToSwaggerGenerator = "/swagger/docs";
+           });
             app.UseAuthentication();
             app.UseOcelot().Wait();
         }

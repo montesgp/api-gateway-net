@@ -10,7 +10,7 @@
           "Port": "44337"
         }
       ],
-      "DownstreamPathTemplate": "/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {
@@ -24,6 +24,19 @@
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api/test",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-infra-it-lab.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/",
+      "SwaggerKey": "ApiTest"
     }
   ],
   "SwaggerEndPoints": [
@@ -33,7 +46,7 @@
         {
           "Name": "API Authentication",
           "Version": "v1",
-          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+          "Url": "https://localhost:44337/swagger/v1/swagger.json"
         }
       ]
     },

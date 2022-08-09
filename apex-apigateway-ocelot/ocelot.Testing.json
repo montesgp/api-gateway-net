@@ -1,52 +1,17 @@
 {
-  "Aggregates": [
-    {
-      "UpstreamPathTemplate": "/api/usersAlbums",
-      "RouteKeys": [ "users", "albums" ],
-      "Aggregator": "UsersAlbumsAggregator"
-    }
-  ],
-
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/notification",
-      "UpstreamHttpMethod": [],
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
+          "Host": "apex-api-auth-dot-studied-zephyr-358815.appspot.com",
+          "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/users",
-      "Key": "users",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
-    },
-    {
-      "UpstreamPathTemplate": "/api/albums",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
-        }
-      ],
-      "DownstreamPathTemplate": "/albums",
-      "Key": "albums"
-    },
-    {
-      "UpstreamPathTemplate": "/api/authenticate",
-      "DownstreamScheme": "http",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 4000
-        }
-      ],
-      "DownstreamPathTemplate": "/users/authenticate",
-      "Key": "authenticate"
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "SwaggerKey": "ApiAuthentication"
     },
     {
       "UpstreamPathTemplate": "/api/EmailNotification",
@@ -54,11 +19,24 @@
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com"
+          "Host": "apex-notifications-api-dot-endless-datum-338902.uc.r.appspot.com"
         }
       ],
       "DownstreamPathTemplate": "/api/EmailNotification",
       "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api¨/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-apexpeople-api-dot-original-scout-356916.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/{endpoint}",
+      "SwaggerKey": "ApiPeople"
     },
     {
       "UpstreamPathTemplate": "/api/test",
@@ -76,18 +54,57 @@
   ],
   "SwaggerEndPoints": [
     {
+      "Key": "ApiAuthentication",
+      "Config": [
+        {
+          "Name": "API Authentication",
+          "Version": "v1",
+          "Url": "https://apex-api-auth-dot-studied-zephyr-358815.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
       "Key": "ApiNotifications",
       "Config": [
         {
           "Name": "API Notifications",
           "Version": "v1",
-          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+          "Url": "https://apex-notifications-api-dot-endless-datum-338902.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiPeople",
+      "Config": [
+        {
+          "Name": "API People",
+          "Version": "v1",
+          "Url": "https://apex-apexpeople-api-dot-original-scout-356916.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiFileManager",
+      "Config": [
+        {
+          "Name": "API FileManager",
+          "Version": "v1",
+          "Url": "https://filemanagerapi-dot-thermal-beach-344303.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiLlamadas",
+      "Config": [
+        {
+          "Name": "API Llamadas",
+          "Version": "v1",
+          "Url": "https://api-llamadas-dot-careful-analyst-356715.uc.r.appspot.com/swagger/v1/swagger.json"
         }
       ]
     }
   ],
-
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44372"
+    "BaseUrl": "https://apex-apigateway-ocelot-dot-alpine-practice-337919.uc.r.appspot.com"
   }
 }
