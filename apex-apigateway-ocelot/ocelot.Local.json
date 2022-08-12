@@ -14,15 +14,16 @@
       "SwaggerKey": "ApiAuthentication"
     },
     {
-      "UpstreamPathTemplate": "/api/EmailNotification",
+      "UpstreamPathTemplate": "/api/Notification/{endpoint}",
       "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
         {
-          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com"
+          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com",
+          "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/api/EmailNotification",
+      "DownstreamPathTemplate": "/api/{endpoint}",
       "SwaggerKey": "ApiNotifications"
     },
     {
