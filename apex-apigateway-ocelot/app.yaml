@@ -1,0 +1,22 @@
+runtime: aspnetcore
+env: flex
+service: apex-apigateway-ocelot
+
+
+#Development configurations
+#network:
+#   name: projects/gcp-ar-prj-interconnect/global/networks/gcp-apps-non-prod-vpc
+#   subnetwork_name: apex-api-gateway-dev-subnet-01
+
+#Testing/QA configurations
+network:
+  name: projects/gcp-ar-prj-interconnect/global/networks/gcp-apps-non-prod-vpc
+  subnetwork_name: apex-api-gateway-qa-subnet-01
+
+#Production configurations
+#network:
+#  name:  projects/gcp-ar-prj-interconnect/global/networks/gcp-apps-prod-vpc
+#  subnetwork_name: apex-api-people-prod-subnet-01
+
+env_variables:
+  ASPNETCORE_ENVIRONMENT: "Testing"

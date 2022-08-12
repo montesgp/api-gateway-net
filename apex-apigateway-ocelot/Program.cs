@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
 
 namespace apex_apigateway_ocelot
 {
@@ -16,7 +15,7 @@ namespace apex_apigateway_ocelot
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hosting, config) =>
                 {
-                    config.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+                    config.AddJsonFile($"ocelot.{hosting.HostingEnvironment.EnvironmentName}.json", optional: false, reloadOnChange: true);
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

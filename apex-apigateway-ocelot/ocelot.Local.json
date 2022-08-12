@@ -10,19 +10,20 @@
           "Port": "44337"
         }
       ],
-      "DownstreamPathTemplate": "/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {
-      "UpstreamPathTemplate": "/api/EmailNotification",
+      "UpstreamPathTemplate": "/api/Notification/{endpoint}",
       "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
         {
-          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com"
+          "Host": "apex-notifications-api-dot-level-night-338902.uc.r.appspot.com",
+          "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/api/EmailNotification",
+      "DownstreamPathTemplate": "/api/{endpoint}",
       "SwaggerKey": "ApiNotifications"
     },
     {
@@ -39,7 +40,6 @@
       "SwaggerKey": "ApiTest"
     }
   ],
-
   "SwaggerEndPoints": [
     {
       "Key": "ApiAuthentication",
@@ -47,7 +47,7 @@
         {
           "Name": "API Authentication",
           "Version": "v1",
-          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+          "Url": "https://localhost:44337/swagger/v1/swagger.json"
         }
       ]
     },
@@ -62,7 +62,6 @@
       ]
     }
   ],
-
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44372"
   }

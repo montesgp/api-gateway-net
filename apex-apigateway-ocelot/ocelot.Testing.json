@@ -1,0 +1,136 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-api-auth-dot-studied-zephyr-358815.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "SwaggerKey": "ApiAuthentication"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Notification/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-notifications-api-dot-endless-datum-338902.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/{endpoint}",
+      "SwaggerKey": "ApiNotifications"
+    },
+    {
+      "UpstreamPathTemplate": "/api/People/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-apexpeople-api-dot-original-scout-356916.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/{endpoint}",
+      "SwaggerKey": "ApiPeople"
+    },
+    {
+      "UpstreamPathTemplate": "/api/FileManager/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "filemanagerapi-dot-noted-terra-344303.uc.r.appspot.com"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/File/{endpoint}",
+      "SwaggerKey": "ApiFileManager"
+    },
+    {
+      "UpstreamPathTemplate": "/api/ApexPubSub/{endpoint}",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api-llamadas-dot-compelling-muse-356715.uc.r.appspot.com"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ApexPubSub/{endpoint}",
+      "SwaggerKey": "ApiLlamadas"
+    },
+    {
+      "UpstreamPathTemplate": "/api/test",
+      "DownstreamScheme": "https",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex-infra-it-lab.uc.r.appspot.com",
+          "Port": "443"
+        }
+      ],
+      "DownstreamPathTemplate": "/",
+      "SwaggerKey": "ApiTest"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "ApiAuthentication",
+      "Config": [
+        {
+          "Name": "API Authentication",
+          "Version": "v1",
+          "Url": "https://apex-api-auth-dot-studied-zephyr-358815.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiNotifications",
+      "Config": [
+        {
+          "Name": "API Notifications",
+          "Version": "v1",
+          "Url": "https://apex-notifications-api-dot-apex-pocs.rj.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiPeople",
+      "Config": [
+        {
+          "Name": "API People",
+          "Version": "v1",
+          "Url": "https://apex-apexpeople-api-dot-original-scout-356916.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiFileManager",
+      "Config": [
+        {
+          "Name": "API FileManager",
+          "Version": "v1",
+          "Url": "https://filemanagerapi-dot-noted-terra-344303.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ApiLlamadas",
+      "Config": [
+        {
+          "Name": "API Llamadas",
+          "Version": "v1",
+          "Url": "https://api-llamadas-dot-compelling-muse-356715.uc.r.appspot.com/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://apex-apigateway-ocelot-dot-alpine-practice-337919.uc.r.appspot.com"
+  }
+}
+ 
