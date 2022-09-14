@@ -6,11 +6,11 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "apex-api-auth-dot-fluent-archway-358815.appspot.com",
-          "Port": "443"
+          "Host": "localhost",
+          "Port": "44337"
         }
       ],
-      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {

@@ -10,7 +10,7 @@
           "Port": "44337"
         }
       ],
-      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {

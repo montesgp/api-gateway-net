@@ -10,59 +10,23 @@
           "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/api/Authentication/Auth",
+      "DownstreamPathTemplate": "/api/Auth",
       "SwaggerKey": "ApiAuthentication"
     },
     {
-      "UpstreamPathTemplate": "/api/EmailNotification",
+      "UpstreamPathTemplate": "/api/Notification/{endpoint}",
       "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
         {
           "Host": "apex-notifications-api-dot-elated-coral-344119.uc.r.appspot.com"
         }
       ],
-      "DownstreamPathTemplate": "/api/EmailNotification",
+      "DownstreamPathTemplate": "/api/{endpoint}",
       "SwaggerKey": "ApiNotifications"
     },
     {
-      "UpstreamPathTemplate": "/api/EmailNotification",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-notifications-api-dot-elated-coral-344119.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/EmailNotification",
-      "SwaggerKey": "ApiNotifications"
-    },
-    {
-      "UpstreamPathTemplate": "/api/PushNotification",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-notifications-api-dot-elated-coral-344119.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/PushNotification",
-      "SwaggerKey": "ApiNotifications"
-    },
-    {
-      "UpstreamPathTemplate": "/api/PushNotification",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-notifications-api-dot-elated-coral-344119.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/PushNotification",
-      "SwaggerKey": "ApiNotifications"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetEmployee",
+      "UpstreamPathTemplate": "/api/People/{endpoint}",
       "DownstreamScheme": "https",
       "UpstreamHttpMethod": [],
       "DownstreamHostAndPorts": [
@@ -71,115 +35,11 @@
           "Port": "443"
         }
       ],
-      "DownstreamPathTemplate": "/api/Employee/GetEmployee",
+      "DownstreamPathTemplate": "/api/{endpoint}",
       "SwaggerKey": "ApiPeople"
     },
     {
-      "UpstreamPathTemplate": "/api/Employee/GetAddress",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetAddress",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetLicense",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetLicense",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetStructure",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetStructure",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetDocument",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetDocument",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetFamilyMembers",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetFamilyMembers",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetPhones",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetPhones",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetMails",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetMails",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/Employee/GetConsolidated",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex-apexpeople-api-dot-crafty-clover-356915.uc.r.appspot.com",
-          "Port": "443"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Employee/GetConsolidated",
-      "SwaggerKey": "ApiPeople"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/Upload",
+      "UpstreamPathTemplate": "/api/File/{endpoint}",
       "DownstreamScheme": "https",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamHostAndPorts": [
@@ -187,103 +47,7 @@
           "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
         }
       ],
-      "DownstreamPathTemplate": "/api/File/Upload",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/GetBuckets",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/GetBuckets",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/GetListObjectsByBucketName",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/GetListObjectsByBucketName",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/DeleteBucket",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/DeleteBucket",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/ExistsBucket",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/ExistsBucket",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/CreateBucket",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/CreateBucket",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/Download",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/Download",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/Delete",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/Delete",
-      "SwaggerKey": "ApiFileManager"
-    },
-    {
-      "UpstreamPathTemplate": "/api/File/CreateBucketAndUpload",
-      "DownstreamScheme": "https",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "filemanagerapi-dot-liquid-verbena-344303.uc.r.appspot.com"
-        }
-      ],
-      "DownstreamPathTemplate": "/api/File/CreateBucketAndUpload",
+      "DownstreamPathTemplate": "/api/File/{endpoint}",
       "SwaggerKey": "ApiFileManager"
     },
     {
@@ -414,6 +178,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://apex-apigateway-ocelot-dot-alpine-practice-337919.uc.r.appspot.com"
+    "BaseUrl": "https://apex-apigateway-ocelot-dot-molten-snowfall-359721.appspot.com/"
   }
 }
