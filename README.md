@@ -3,9 +3,9 @@
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![Ocelot](https://img.shields.io/badge/Ocelot-25.0-6a1b9a)](https://github.com/ThreeMammals/Ocelot)
 
-An **API Gateway proof of concept** built with ASP.NET Core and [Ocelot](https://github.com/ThreeMammals/Ocelot), developed as a working POC for Grupo Prominente (client: **Apex**). It is a single, central entry point that receives external and authenticated requests, validates authentication, and routes them to internal microservices.
+An **API Gateway proof of concept** built with ASP.NET Core and [Ocelot](https://github.com/ThreeMammals/Ocelot), designed and run on **Google App Engine (Flexible)** while I worked as a **Software Architect at [Grupo Prominente](https://grupoprominente.com/) — UNX Digital** (its digital business unit) for the client **[Apex America](https://apexamerica.com/)**. It is a single, central entry point that receives external and authenticated requests, validates authentication, and routes them to internal microservices.
 
-> **Note on ownership/license:** this is a POC produced for a client engagement. The code is shared here for demonstration and educational purposes; the intellectual property belongs to the client it was developed for.
+> **Attribution:** the idea and business context for this project belong to the client engagement — not to me. It was produced during my role as Software Architect at **Grupo Prominente (UNX Digital)** for **Apex America**. The code is shared here only for demonstration and educational purposes.
 
 ---
 
@@ -59,6 +59,8 @@ The gateway is the **single entry point** for the platform:
 
 In the production setup hosted on GCP, placing the gateway in front of the microservices also **improved the latency** of requests to the downstream services.
 
+The full architecture is also available as an editable draw.io diagram in [`docs/api-gateway-net.drawio`](docs/api-gateway-net.drawio).
+
 ---
 
 ## How it works
@@ -85,15 +87,21 @@ In the production setup hosted on GCP, placing the gateway in front of the micro
 ## Project structure
 
 ```
-apex-apigateway-ocelot/
-├── Program.cs                         # Host bootstrap, loads ocelot.{env}.json
-├── Startup.cs                         # DI: JWT auth, Ocelot + delegating handler
-├── Handlers/
-│   └── RemoveEncodingDelegatingHandler.cs  # Custom downstream handler
-├── ocelot.json                        # Routes + downstream config
-├── ocelot.{Environment}.json          # Per-environment route overrides
-├── appsettings*.json                  # Per-environment app settings
-└── app.yaml                           # GCP App Engine Flex descriptor (production VPC)
+.
+├── apex-apigateway-ocelot.sln
+├── README.md
+├── LICENSE
+├── docs/
+│   └── api-gateway-net.drawio         # Architecture diagram (draw.io)
+└── apex-apigateway-ocelot/
+    ├── Program.cs                     # Host bootstrap, loads ocelot.{env}.json
+    ├── Startup.cs                     # DI: JWT auth, Ocelot + delegating handler
+    ├── Handlers/
+    │   └── RemoveEncodingDelegatingHandler.cs  # Custom downstream handler
+    ├── ocelot.json                    # Routes + downstream config
+    ├── ocelot.{Environment}.json      # Per-environment route overrides
+    ├── appsettings*.json              # Per-environment app settings
+    └── app.yaml                       # GCP App Engine Flex descriptor (production VPC)
 ```
 
 ---
@@ -148,7 +156,7 @@ Each route maps an **upstream path** (what external callers use) to a **downstre
 
 ## Deployment
 
-The POC ships with a Google App Engine **Flexible** descriptor (`app.yaml`) configured for the **Production** environment:
+This gateway **ran on Google App Engine (Flexible environment) on GCP**. The POC ships with an App Engine Flex descriptor (`app.yaml`) configured for the **Production** environment:
 
 - `runtime: aspnetcore`, `env: flex`
 - `ASPNETCORE_ENVIRONMENT: Production`
@@ -175,4 +183,6 @@ The historical source used **.NET Core 3.1** (Ocelot 16, JwtBearer 3.1), which r
 
 ## License
 
-Proof of concept developed for Grupo Prominente (client: **Apex**). All rights belong to the client; no license is granted for commercial reuse. See the [architecture notes in the Wiki](../../wiki) for more detail.
+Distributed under the [MIT License](LICENSE). See [LICENSE](LICENSE) for details.
+
+**Attribution:** the underlying idea and business context of this project belong to the client engagement — they are **not mine**. This code was produced during my time as a **Software Architect at [Grupo Prominente](https://grupoprominente.com/) (UNX Digital)** for the client **[Apex America](https://apexamerica.com/)** and is published here for demonstration and educational purposes only.
