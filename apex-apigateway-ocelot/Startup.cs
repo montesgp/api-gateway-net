@@ -2,7 +2,6 @@ using apex_apigateway_ocelot.Handlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -31,26 +30,20 @@ namespace apex_apigateway_ocelot
                         ValidateIssuerSigningKey = true,
                         ValidateIssuer = false,
                         ValidateAudience = false,
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes("MyAnonymousAndSecuredSecretKey")),
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            System.Text.Encoding.ASCII.GetBytes("MyAnonymousAndSecuredSecretKey")),
                         ClockSkew = new System.TimeSpan(0)
                     };
                 });
 
             services.AddOcelot()
                 .AddDelegatingHandler<RemoveEncodingDelegatingHandler>(true);
-            services.AddSwaggerForOcelot(Configuration);
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UsePathBase("/gateway");
-            app.UseSwaggerForOcelotUI(opt =>
-           {
-               opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
-               opt.PathToSwaggerGenerator = "/swagger/docs";
-           });
             app.UseAuthentication();
             app.UseOcelot().Wait();
         }
